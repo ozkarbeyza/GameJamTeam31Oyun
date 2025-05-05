@@ -6,7 +6,7 @@ public class LoadSceneOnPuzzleComplete : MonoBehaviour
     [Header("Name of the scene to load after puzzle completion")]
     [SerializeField] private string sceneToLoad = "LaboratoryScene";
 
-    // Call this when the puzzle is fully solved
+    
     public void OnPuzzleComplete()
     {
         if (SceneExists(sceneToLoad))
@@ -20,7 +20,7 @@ public class LoadSceneOnPuzzleComplete : MonoBehaviour
         }
     }
 
-    // Optional: check if the scene is listed in Build Settings
+    
     private bool SceneExists(string name)
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
