@@ -14,7 +14,7 @@ public class CubeClick : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Toggle image
+        
         image.enabled = !image.enabled;
 
         if (image.enabled)
@@ -32,13 +32,13 @@ public class CubeClick : MonoBehaviour
             if (Time.time - imageOpenedTime < 0.1f)
                 return;
 
-            // Close image only if clicked outside the cube
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out RaycastHit hit) || hit.transform != transform)
             {
                 image.enabled = false;
 
-                // Destroy the cube after the image is closed
+                
                 if (imageWasOpened)
                 {
                     Destroy(gameObject);
