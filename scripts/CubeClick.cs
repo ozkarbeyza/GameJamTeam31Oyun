@@ -7,6 +7,9 @@ public class CubeClick : MonoBehaviour
     private float imageOpenedTime;
     private bool imageWasOpened = false;
 
+    
+    public GameManager gameManager;
+
     void Start()
     {
         image.enabled = false;
@@ -14,7 +17,7 @@ public class CubeClick : MonoBehaviour
 
     void OnMouseDown()
     {
-        
+        // Toggle the image visibility
         image.enabled = !image.enabled;
 
         if (image.enabled)
@@ -28,7 +31,7 @@ public class CubeClick : MonoBehaviour
     {
         if (image.enabled && Input.GetMouseButtonDown(0))
         {
-            // Prevent immediate closing
+            
             if (Time.time - imageOpenedTime < 0.1f)
                 return;
 
@@ -42,6 +45,7 @@ public class CubeClick : MonoBehaviour
                 if (imageWasOpened)
                 {
                     Destroy(gameObject);
+                    gameManager.ObjectClicked();
                 }
             }
         }
