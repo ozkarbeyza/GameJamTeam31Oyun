@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GünlükInteract : MonoBehaviour
 {
-    public GameObject GünlükPanel; // Only the diary panel
+    public GameObject GünlükPanel; 
 
     void OnMouseDown()
     {
