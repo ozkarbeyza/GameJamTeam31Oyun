@@ -7,7 +7,7 @@ public class PuzzleEntrance : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Only works with mouse or tap (on actual GameObject with Collider)
+        
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
